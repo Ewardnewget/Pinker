@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>拼客</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+  </head>
+  <header>
+    <nav class="navbar navbar-fixed-top navbar-inverse ">
+      
+      <div class="container">
+        <div class='navbar-header'>
+          <a class="navbar-brand" href='#'>
+            <%= link_to image_tag("logo.png",alt:"logo"), root_url%>
+          </a>
+        </div>
+        
+          
+            <% if logged_in? %>
+            <%= yield(:user_nav)%>
+            <% end %>
+        
+         
+            <% if !logged_in? %>
+              <%= render "layouts/login" %>
+            <% else %>
+              <%= render "layouts/logged_in" %>
+            <% end %>
+
+       
+        
+      
+      </div>
+    </nav>
+  </header>
+  <body>
+    
+     
+
+<div class="container">
+  <% flash.each do |message_type, message| %>
+<div class="alert alert-<%= message_type %>"><%= message %>
+<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<% end %>
+<div class="jumbotron">
+   <div class="container for-about">
+     <div class='row'>
+       <div class='col-lg-12 text-center'>
+         <h1><%=yield(:name) %></h1>
+       </div>
+     </div>
+     <div class='row'>
+       <%= yield %>
+   </div>
+</div>
+</div>
+   
+   
+    </div>
+    <%= yield(:user_script)%>
+  </body>
+</html>

@@ -1,0 +1,2 @@
+class NlpSearch < ApplicationRecord
+end

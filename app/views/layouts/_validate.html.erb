@@ -1,0 +1,32 @@
+<div class='row'>
+  <table class='table'>
+    <thead>
+      <tr>
+        <th class='text-center'>序号</th>
+        <th class='text-center'>姓名</th>
+        <th class='text-center'>性别</th>
+        <th class='text-center'>手机号</th>
+        <th class='text-center'>邮箱</th>
+        <th class='text-center'>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+  <% @users.each do |user|%>
+    <tr class='text-center'>
+      <td><%= user.id %></td>
+      <td><%= user.name%></td>
+      <td><%= sex_present user.sex %></td>
+      <td><%= user.phone %> </td>
+      <td><%= user.email %></td>
+      <td>
+        <div class='btn-group' role='group'>
+          <%= link_to '图像信息', "/manager/#{user.class.to_s.downcase}/#{user.id}/pictures", method:'get',class:'btn btn-default'%>
+          <%= link_to '验证通过', "/manager/#{user.class.to_s.downcase}/#{user.id}/pass", method:'post',class:'btn btn-default'%>
+        </div>
+      </td>
+    </tr>
+ 
+  <%end%>
+  </tbody>
+  </table>
+</div>

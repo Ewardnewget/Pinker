@@ -1,0 +1,11 @@
+<%= content_for :user_nav do %>
+<ul class='nav nav-pills navbar-nav navbar-left '>
+  <li class='nav-item' role='presentation'>
+            <%= link_to '验证司机',"/manager/#{current_user.id}/validate_driver" %>
+  </li>
+  <li role='presentation'>
+            <%= link_to '验证学生',"/manager/#{current_user.id}/validate_student" %>
+  </li>
+ 
+  </ul>
+<%end%>

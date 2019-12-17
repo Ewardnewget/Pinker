@@ -1,0 +1,15 @@
+<%= content_for :user_nav do %>
+<% if is_passed %>
+<ul class='nav nav-pills navbar-nav navbar-left '>
+  <li class='nav-item' role='presentation'>
+            <%= link_to '已接订单',"/driver/#{current_user.id}/accept_orders" %>
+  </li>
+  <li role='presentation'>
+            <%= link_to '已完成订单',"/driver/#{current_user.id}/finished_orders" %>
+  </li>
+  <li role='presentation'>
+            <%= link_to '历史订单',"/driver/#{current_user.id}/history_orders" %>
+  </li>
+  </ul>
+<% end %>        
+<% end %>

@@ -1,0 +1,115 @@
+<%= render 'layouts/driver_nav'%>
+<%=provide(:name,'个人信息')%>
+<div class='row'>
+  <div class='col-lg-4'>
+    <div class='panel panel-primary'>
+      <div class='panel-heading'>
+        头像
+      </div>
+      <div class='panel-body'  align="center">
+        <%= image_tag(@head,alt:'head',class:'thumbnail') %>
+        
+      </div>
+      
+    </div>
+    <div class='panel panel-primary'>
+      <div class='panel-heading '>
+        身份证
+      </div>
+      <div class='panel-body' align="center">
+        <%= image_tag(@id_card,alt:'id_card',class:'thumbnail') %>
+        
+      </div>
+      
+    </div>
+    
+    <div class='panel panel-primary'>
+      <div class='panel-heading '>
+        驾照
+      </div>
+      <div class='panel-body' align="center">
+        <%= image_tag(@license,alt:'license',class:'thumbnail') %>
+        
+      </div>
+      
+    </div>
+  
+  </div>
+  <div class='col-lg-8'>
+    <div class='panel panel-primary'>
+      <div class='panel-heading'>
+        基本信息
+      </div>
+     
+      <div class='panel-body'>
+        <ul class='list-group'>
+          
+          <li class='list-group-item'>
+          
+            
+            <div class='row'>
+              <div class='col-lg-2'>姓名</div>
+              <div class='col-lg-10'><%= @user.name %></div>
+            </div>
+          </li>
+           <li class='list-group-item'>
+            <div class='row'>
+              <div class='col-lg-2'>性别</div>
+              <div class='col-lg-10'><%= sex_present @user.sex  %></div>
+            </div>
+          </li>
+          <li class='list-group-item'>
+            <div class='row'>
+              <div class='col-lg-2'>邮箱</div>
+              <div class='col-lg-10'><%= @user.email  %></div>
+            </div>
+          </li>
+          <li class='list-group-item'>
+            <div class='row'>
+              <div class='col-lg-2'>手机号</div>
+              <div class='col-lg-10'><%=  @user.phone  %></div>
+            </div>
+          </li>
+          <li class='list-group-item'>
+            <div class='row'>
+              <div class='col-lg-2'>验证状态</div>
+              <div class='col-lg-10'><%= pass_present @user.pass  %></div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class='panel panel-primary'>
+      <div class='panel-heading'>
+        车辆
+      </div>
+      <div class='panel-body'>
+        <div class='row>'>
+          <div class='col-lg-4'>
+            <%= image_tag(@car.picture,alt:'car_picture',class:'thumbnail') %>
+          </div>
+          <div class='col-lg-8'>
+            <ul class='list-group'>
+              <li class='list-group-item'>
+                <div class='row'>
+                  <div class='col-lg-4'>车牌号</div>
+                  <div class='col-lg-6'><%=  @car.number  %></div>
+                </div>
+
+              </li>
+              <li class='list-group-item'>
+                <div class='row'>
+                  <div class='col-lg-4'>核载人数</div>
+                  <div class='col-lg-6'><%=  @car.person_number  %></div>
+                </div>
+
+              </li>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>

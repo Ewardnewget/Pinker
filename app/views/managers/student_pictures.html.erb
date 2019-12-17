@@ -1,0 +1,23 @@
+<%= render 'layouts/manager_nav'%>
+<%= provide(:name, "学生图像")%>
+
+<div class='row'>
+  <div class='panel panel-primary'>
+    <div class='panel-heading'>
+      头像
+    </div>
+    <div class='panel-body' align='center'>
+      <%= image_tag(@head, alt:"head", class:'thumbnail') %>
+    </div>
+  </div>
+  
+  <div class='panel panel-primary'>
+    <div class='panel-heading'>
+      身份证
+    </div>
+    <div class='panel-body' align='center'>
+      <%= image_tag(@id_card, alt:"idcard", class:'thumbnail') %>
+    </div>
+  </div>
+  
+</div>

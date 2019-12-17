@@ -1,0 +1,43 @@
+<%= render 'layouts/student_nav'%>
+<%=provide(:name,'修改订单')%>
+<div class='row'>
+  <div class='col-lg-6 col-lg-offset-3'>
+    <%= form_for(@order, url: {controller: 'students', action:'update_order'},html: {class: "form-horizontal"}) do |f|%>
+<div class='form-group'>
+    <%= f.label :number, "目标人数", class: 'control-label col-lg-4' %>
+    <div class='col-lg-6'>
+      <%= f.text_field :number, class:"form-control"%>
+    </div>
+  
+</div>
+<div class='form-group'>
+    <%= f.label :cur_number, "当前人数", class: 'control-label col-lg-4' %>
+    <div class='col-lg-6'>
+      <%= f.text_field :cur_number, class:"form-control", disabled: 'disabled'%>
+    </div>
+  
+</div>
+<div class='form-group'>
+    <%= f.label :time, "时间", class: 'control-label col-lg-4' %>
+    <div class='col-lg-6'>
+      <%= f.text_field :time, class:"form-control", disabled: 'disabled'%>
+    </div>
+  
+</div>
+<div class='form-group'>
+    <%= f.label :destination, "目的地", class: 'control-label col-lg-4' %>
+    <div class='col-lg-6'>
+      <%= f.text_field :destination, class:"form-control", disabled: 'disabled'%>
+    </div>
+  
+</div>
+<div class='col-lg-4 col-lg-offset-5'>
+  <%= f.submit "提交", class: "btn btn-primary" %>
+</div>
+<%end%>
+  </div>
+</div>
+
+
+
+

@@ -1,0 +1,18 @@
+<%= content_for :user_nav do %>
+<% if is_passed %>
+<ul class='nav nav-pills navbar-nav navbar-left '>
+          <li class='nav-item' role='presentation'>
+            <%= link_to '创建订单', controller: 'students', action: 'new_order'%>
+          </li>
+          <li class='nav-item' role='presentation'>
+            <%= link_to '当前订单',"/student/#{current_user.id}/orders" %>
+          </li>
+          <li role='presentation'>
+            <%= link_to '被接订单',"/student/#{current_user.id}/accept_orders" %>
+          </li>
+          <li role='presentation'>
+            <%= link_to '历史订单',"/student/#{current_user.id}/history" %>
+          </li>
+        </ul>
+<% end %>
+<%end%>

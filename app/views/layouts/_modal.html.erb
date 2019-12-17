@@ -1,0 +1,38 @@
+<button type='button' class='btn btn-default' data-toggle='modal' data-target=<%= "##{button_name}_confirm_#{order.id}"%>><%= button_name %></button>
+            <div class="modal fade" id=<%= "#{button_name}_confirm_#{order.id}"%> tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            	<div class="modal-dialog">
+            		<div class="modal-content">
+            			<div class="modal-header">
+            				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+            					&times;
+            				</button>
+            				<h4 class="modal-title" >
+            					<%= button_name %>?
+            				</h4>
+            			</div>
+            			<div class="modal-body">
+            			  <table>
+            			    <th>
+            			      <tr> </tr><tr> </tr><tr> </tr><tr> </tr><tr> </tr>
+            			    </th>
+                        <tbody>
+                      <tr class='text-center'>
+                      <td class='col-md-2'><%= order.id %></td>
+                      <td class='col-md-2'><%= order.number %></td>
+                      <td class='col-md-2'><%= order.cur_number%></td>
+                      <td class='col-md-4'><%= order.time%></td>
+                      <td class='col-md-2'><%= order.destination%></td>
+                    </tr>
+                        </tbody>
+   
+                    </table>
+            			</div>
+            			<div class="modal-footer">
+            				<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+            				</button>
+      
+            				<%= link_to button_name, cur_url, method: cur_method, class: 'btn btn-default'%>
+            			</div>
+            		</div><!-- /.modal-content -->
+            	</div><!-- /.modal -->
+            </div>
